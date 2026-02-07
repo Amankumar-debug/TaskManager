@@ -1,0 +1,82 @@
+.container{
+
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(255, 254, 254);
+    padding: 1rem;
+}
+
+.navbarOptionContainer{
+    display: flex;
+}
+
+.buttonJoin{
+    width: fit-content;
+    cursor: pointer;
+    font-size: .8rem;
+    padding-inline: 1.2rem;
+    font-weight: 400;
+    padding-block: .6rem;
+    border-radius: 20px;
+   margin-top: .8rem;
+   user-select: none;
+   transition: all .2s;
+    background: #e87171;
+}
+
+
+
+.shortList{
+    width: 30%;
+    display: flex;
+
+    align-items: center;
+}
+
+.add{
+    padding-left: 2rem;
+    cursor: pointer;
+}
+
+/* Smaller Laptop Styles */
+@media (max-width: 1200px) {
+    .navbar{
+        padding: 0.75rem;
+    }
+
+    .shortList h1{
+        font-size: 1.4rem;
+    }
+
+    .add{
+        padding-left: 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .navbarOptionContainer h1{
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar{
+        padding: 0.5rem;
+    }
+
+    .shortList h1{
+        font-size: 1.2rem;
+    }
+
+    .add{
+        padding-left: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .navbarOptionContainer h1{
+        font-size: 1rem;
+    }
+}

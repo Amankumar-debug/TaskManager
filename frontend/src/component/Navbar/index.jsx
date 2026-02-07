@@ -1,0 +1,65 @@
+import React from 'react'
+import styles from "./styles.module.css"
+import { useRouter } from 'next/router'
+// import { useDispatch } from 'react-redux';
+
+export default function Navbar() {
+
+  const router=useRouter();
+  
+  return (
+    <>
+   <div className={styles.container}>
+    <nav className={styles.navbar}>
+
+      <div className={styles.shortList}>
+       <h1 style={{cursor:"pointer" , fontWeight:"600"}} onClick={()=>{
+        router.push("/")
+       }}>All Tasks</h1>
+
+       <h2 className={styles.add} onClick={()=>{
+        router.push("/AddTask")
+       }}>Add Task</h2>
+
+      </div>
+       
+       <div className={styles.navbarOptionContainer}>
+
+
+       
+       {/* {authState.profilefeched &&<div>
+        <div style={{display:"flex", gap:"1.2rem"}}>
+          <p>Hey, {authState.user.userId.username}</p>
+          
+          <p style={{cursor:"pointer",fontWeight:"bold"}} onClick={()=>{
+            router.push("/profile");
+          }}>Profile</p>
+          <p onClick={()=>{
+            localStorage.removeItem("token")
+            dispatch(reset())
+            router.push('/login')
+          }} style={{cursor:"pointer",fontWeight:"bold"}}>Log Out</p>
+          </div>
+        
+        </div>}
+ 
+
+        {!authState.profilefeched && <div className={styles.navbarOptionContainer}>
+        <div onClick={()=>{
+          router.push('/login')
+        }}  className={styles.buttonJoin}>
+          <p>Be a Part</p>
+        </div>
+        </div>} */}
+
+
+
+       </div>
+    </nav>
+   
+
+
+   </div>
+   </>
+  )
+}
