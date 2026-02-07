@@ -20,6 +20,7 @@ const geistMono = Geist_Mono({
 export default function Home() {
   const [task,setTask]=useState([]);
   const [message,setMessage]=useState("");
+  const [loading,setLoading]=useState(true);
 
   const router=useRouter();
 
@@ -28,11 +29,15 @@ export default function Home() {
 
   const fetchTasks = async () => {
     try {
+      setLoading(true);
       const response = await client.get("/all_tasks");
       setTask(response.data.tasks);
       setMessage(response.data.message);
     } catch (error) {
       setMessage(error.response?.data?.message || "Something went wrong");
+    }
+    finally{
+      setLoading(false);
     }
   };
 
@@ -56,9 +61,12 @@ const handleDelete = async (id) => {
   <div className={styles.wrapper}>
     <h1 className={styles.pageTitle}>Your Tasks</h1>
 
-    {task.length === 0 && (
+    {!loading && task.length === 0 && (
       <p className={styles.empty}>No tasks added yet.</p>
     )}
+
+    {loading && <p className={styles.loading}>Loading tasks...</p>}
+
 
     <div className={styles.grid}>
       {task.map((t) => (
